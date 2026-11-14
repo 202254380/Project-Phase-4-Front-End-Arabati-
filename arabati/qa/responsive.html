@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Arabati responsive QA</title>
+    <style>
+      body {
+        margin: 0;
+        background: #dedbd5;
+        font:
+          13px Arial,
+          sans-serif;
+        color: #30251d;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        padding: 12px 24px;
+        background: #fffdf8;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        border-bottom: 1px solid #cfc0ad;
+        z-index: 2;
+      }
+      h1 {
+        font:
+          20px Georgia,
+          serif;
+        margin: 0 auto 0 0;
+      }
+      select {
+        font: 12px Arial;
+        padding: 9px;
+        background: #fff;
+        border: 1px solid #cfc0ad;
+        border-radius: 4px;
+        min-height: 38px;
+      }
+      label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .frame-wrap {
+        overflow: auto;
+        padding: 22px;
+        display: flex;
+        justify-content: safe center;
+      }
+      iframe {
+        display: block;
+        width: 390px;
+        height: 844px;
+        min-width: 0;
+        flex-shrink: 0;
+        border: 1px solid #c3b5a4;
+        border-radius: 12px;
+        background: #fbf6f0;
+        box-shadow: 0 15px 45px #30201022;
+      }
+      .note {
+        text-align: center;
+        font-size: 11px;
+        padding: 0 20px 20px;
+        color: #65584b;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Arabati responsive QA</h1>
+      <label
+        >Viewport<select id="width">
+          <option>360</option>
+          <option selected>390</option>
+          <option>768</option>
+          <option>1024</option>
+          <option>1920</option>
+        </select></label
+      ><label
+        >Page<select id="page">
+          <option value="/">Discover</option>
+          <option value="/cart/roast">Cart profile</option>
+          <option value="/signin">Sign in</option>
+          <option value="/bookings">Bookings</option>
+          <option value="/vendor">Vendor dashboard</option>
+          <option value="/calendar">Calendar</option>
+          <option value="/listing">Listing editor</option>
+          <option value="/admin">Admin dashboard</option>
+          <option value="/moderation">Reports</option>
+          <option value="/records">Records</option>
+        </select></label
+      >
+    </header>
+    <div class="frame-wrap">
+      <iframe
+        id="app"
+        title="Responsive Arabati application"
+        src="../index.html#/"
+      ></iframe>
+    </div>
+    <p class="note">
+      Development-only viewport harness. The iframe renders the real application
+      at the selected CSS width.
+    </p>
+    <script>
+      const frame = document.getElementById("app");
+      document.getElementById("width").addEventListener("change", (e) => {
+        frame.style.width = e.target.value + "px";
+      });
+      document.getElementById("page").addEventListener("change", (e) => {
+        frame.src = "../index.html#" + e.target.value;
+      });
+    </script>
+  </body>
+</html>

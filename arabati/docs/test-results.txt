@@ -1,0 +1,44 @@
+
+> arabati-phase4@1.0.0 test
+> node --test tests/*.test.js
+
+✔ Riyadh local date and future validation reject today and invalid calendar dates (20.285244ms)
+✔ guest discovery exposes only active approved unsuspended listings (14.58869ms)
+✔ city, category, budget and availability filters compose (15.987588ms)
+✔ pending requests do not reserve dates (15.095475ms)
+✔ registration validates Saudi mobile, uniqueness, password, terms and public roles (13.490996ms)
+✔ valid request stores Pending with immutable package snapshot, reference and alerts (16.643036ms)
+✔ booking validation rejects over-capacity guests, insufficient budget and excessive duration (18.947388ms)
+✔ non-customer cannot create a booking (32.206225ms)
+✔ duplicate request is rejected without creating a second booking (15.341385ms)
+✔ blocked and accepted dates reject requests (29.291643ms)
+✔ acceptance reserves the date and declines competing pending requests (13.297005ms)
+✔ twenty competing decisions produce exactly one accepted event in serialized state (287.019349ms)
+✔ customer, administrator and other vendor cannot decide a vendor booking (40.18782ms)
+✔ cancellation requires ownership, reason and future eligible state, then releases reservation (15.353743ms)
+✔ completion is available only to the owning vendor after event end (32.731888ms)
+✔ verified review needs completed ownership, valid rating/text and is unique (43.660363ms)
+✔ calendar blocks decline affected pending requests and can be removed (19.173038ms)
+✔ past and accepted booking dates cannot be blocked (33.222306ms)
+✔ package edits preserve snapshots on earlier requests (16.53317ms)
+✔ listing validation requires cities, valid menu and positive finite package values (16.309504ms)
+✔ vendor draft submission stays pending and hidden until verification (15.941589ms)
+✔ verification requires admin, pending state, checks or a rejection reason (53.086841ms)
+✔ suspension hides a listing, preserves existing bookings and restore does not bypass approval (14.692977ms)
+✔ moderation requires a reason and protects the current administrator (29.947691ms)
+✔ report validation preserves private evidence and blocks duplicate open reports (30.067653ms)
+✔ hide-and-resolve updates public average/count and saves audit reason and actor (15.235845ms)
+✔ notification read action affects only the signed-in account (14.054826ms)
+✔ administrator booking oversight cannot change participant statuses (42.124429ms)
+✔ wrong credentials show a generic error and fifth failure rate-limits retry (15.821849ms)
+✔ customer registration stores a derived credential and never plaintext (60.03898ms)
+✔ password reset is generic, expires after 30 minutes, single-use and invalidates sessions (49.420252ms)
+✔ profile changes validate mobile, and password change checks the current password (56.51491ms)
+ℹ tests 32
+ℹ suites 0
+ℹ pass 32
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1315.269748
